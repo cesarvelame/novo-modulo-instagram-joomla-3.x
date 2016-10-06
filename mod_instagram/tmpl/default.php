@@ -5,7 +5,8 @@ $document->addScript('modules/mod_instagram/js/mod_instagram.js');
 $module = JModuleHelper::getModule('mod_instagram');
 $moduleParams = new JRegistry();
 $moduleParams->loadString($module->params);
-$api = "https://api.instagram.com/v1/users/self/media/recent/?access_token=1029213673.2e992d8.2beb8f6022434f50a8a1c097e3596be7&count=20";  
+$token = $moduleParams->get('token');
+$api = "https://api.instagram.com/v1/users/self/media/recent/?access_token=".$token."&count=20";
 
 function get_curl($url) {
     if(function_exists('curl_init')) {
@@ -62,11 +63,3 @@ if(file_exists($cache) && filemtime($cache) > time() - 60*60){
 		}
 	echo "</div>"
 ?>
-	<div class="outstanding-footer">
-        <a href="https://www.instagram.com/ufrb_edu" class="outstanding-link">
-            <span class="text">Mais Fotos</span>
-            <span class="icon-box">                                          
-              <i class="icon-angle-right icon-light"><span class="hide">&nbsp;</span></i>
-            </span>
-        </a>
-    </div>
