@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.1"
+	client="site">
+	<name>mod_instagram</name>
+	<author>César Velame</author>
+	<creationDate>2014</creationDate>
+	<copyright>Copyright (C) 2014</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>cesarvelame@gmail.com</authorEmail>
+	<authorUrl>www.cesarvelame.com</authorUrl>
+	<version>1.0</version>
+	<description>Módulo que mostra um grid de fotos do Instagram</description>
+	<files>
+		<filename module="mod_instagram">mod_instagram.php</filename>
+		<filename>index.html</filename>
+		<filename>css/mod_instagram.css</filename>
+		<filename>js/mod_instagram.js</filename>
+	</files>
+	<config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="token" type="text" label="Access Token" />
+			<field name="username" type="text" label="Username" />
+		</fieldset>
+				<fieldset name="advanced">
+				<field
+					name="cache"
+					type="list"
+					default="1"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option
+						value="1">JGLOBAL_USE_GLOBAL</option>
+					<option
+						value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="text"
+					default="900"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+
+				<field
+					name="cachemode"
+					type="hidden"
+					default="itemid">
+					<option
+						value="itemid"></option>
+				</field>
+			</fieldset>
+			</fields>
+	</config>	
+</extension>

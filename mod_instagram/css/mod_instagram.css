@@ -1,0 +1,11 @@
+.thumb{
+width:67px;
+height:67px;
+margin:0px 0px 5px 5px;
+}
+.thumb:hover{
+	opacity:0.8;
+}
+#instagram{
+padding-top:10px;
+}
